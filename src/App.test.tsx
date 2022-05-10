@@ -1,9 +1,33 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const renderMockedElement = () => {
+  return render(<App />);
+};
+
+describe("App component", () => {
+  it("should render a form", () => {
+    renderMockedElement();
+    expect(screen.getAllByRole("form").length).toEqual(1);
+  });
+
+  it("should render an input", () => {
+    renderMockedElement();
+    expect(screen.getAllByRole("textbox").length).toEqual(1);
+  });
+
+  it("should render an button", () => {
+    renderMockedElement();
+    expect(screen.getAllByRole("button").length).toEqual(1);
+  });
+
+  it("should render 3 playing cards", async () => {
+    renderMockedElement();
+    const button = screen.getAllByRole("button");
+    fireEvent.click(button[0]);
+
+    await waitFor(() => {
+      expect(screen.getAllByRole("img").length).toBe(3);
+    });
+  });
 });
