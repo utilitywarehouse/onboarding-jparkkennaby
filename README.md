@@ -15,3 +15,13 @@ npm start
 ```
 npm run build
 ```
+
+## Docker Commands
+
+```
+docker build -t USERNAME/onboarding_project:latest .
+```
+
+```
+docker run -p 8080:80 USERNAME/onboarding_project
+```
