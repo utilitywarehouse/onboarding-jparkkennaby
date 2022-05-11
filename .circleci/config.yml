@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/node:18.0.0
+    steps:
+      - checkout
+      - run:
+          name: Installing dependencies
+          command: make install
+      - run:
+          name: Build prod version
+          command: make build
+      - run:
+          name: Run tests
+          command: make test
+
+workflows:
+  build:
+    jobs:
+      - build_and_test
