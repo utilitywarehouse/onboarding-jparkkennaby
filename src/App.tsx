@@ -25,9 +25,8 @@ function App() {
           alignItems: "center",
         }}
       >
-        <form onSubmit={(e) => handleSubmit(e)} role="form">
+        <form onSubmit={(e) => handleSubmit(e)} aria-label="form">
           <input
-            role="textbox"
             type="number"
             max={7}
             min={1}
@@ -37,7 +36,7 @@ function App() {
             }}
           />
 
-          <button role="button" type="submit">
+          <button aria-label="button" type="submit">
             Draw Hand
           </button>
         </form>

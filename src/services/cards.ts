@@ -28,6 +28,8 @@ const draw = async (count: number) => {
   }
 };
 
-export default {
+const requests = {
   draw,
 };
+
+export default requests;

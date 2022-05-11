@@ -12,8 +12,8 @@ describe("App component", () => {
   });
 
   it("should render an input", () => {
-    renderMockedElement();
-    expect(screen.getAllByRole("textbox").length).toEqual(1);
+    const { container } = renderMockedElement();
+    expect(container.querySelectorAll("input").length).toEqual(1);
   });
 
   it("should render an button", () => {
