@@ -1,4 +1,5 @@
 APP_NAME=jparkkennaby-onboarding
+# CIRCLE_SHA1 = default env var provided by circleci
 
 install:
 	npm install
