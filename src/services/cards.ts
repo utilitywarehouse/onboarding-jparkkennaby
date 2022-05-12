@@ -1,10 +1,10 @@
-const BASE_URL = "http://deckofcardsapi.com";
+const BASE_URL = "https://deckofcardsapi.com";
 const ROUTE = "/api/deck/new/draw/";
 // http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1
 // http://deckofcardsapi.com/api/deck/new/draw/?count=3
 
 const getEndpoint = () => {
-  return `${BASE_URL}/${ROUTE}`;
+  return `${BASE_URL}${ROUTE}`;
 };
 
 const draw = async (count: number) => {
