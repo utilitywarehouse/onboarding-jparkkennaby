@@ -1,3 +1,5 @@
+APP_NAME=jparkkennaby-onboarding
+
 install:
 	npm install
 
