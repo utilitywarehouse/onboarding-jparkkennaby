@@ -33,9 +33,9 @@ jobs:
       - run:
           name: Docker push
           command: make docker_push
-      # - run:
-      #     name: Deploy
-      #     command: make deploy
+      - run:
+          name: Deploy
+          command: make deploy
 
 workflows:
   build:
