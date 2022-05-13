@@ -4,7 +4,7 @@ import cards from "./services/cards";
 
 function App() {
   const [playingCards, setPlayingCards] = useState([]);
-  const [handCount, setHandCount] = useState(3);
+  const [handCount, setHandCount] = useState(7);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
