@@ -21,13 +21,18 @@ describe("App component", () => {
     expect(screen.getAllByRole("button").length).toEqual(1);
   });
 
-  it("should render 3 playing cards", async () => {
-    renderMockedElement();
+  it("should render a certain amount of playing cards", async () => {
+    const amount = 6;
+
+    const { container } = renderMockedElement();
+    const input = container.querySelectorAll("input")[0];
     const button = screen.getAllByRole("button");
+
+    fireEvent.change(input, { target: { value: amount } });
     fireEvent.click(button[0]);
 
     await waitFor(() => {
-      expect(screen.getAllByRole("img").length).toBe(3);
+      expect(screen.getAllByRole("img").length).toBe(amount);
     });
   });
 });
